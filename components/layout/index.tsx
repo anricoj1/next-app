@@ -9,7 +9,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 // routes
-import routes from 'pages/routes';
+import routes from 'routes/routes';
 
 
 const Layout = ({ children }: LayoutProps) => {

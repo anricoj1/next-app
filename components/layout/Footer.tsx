@@ -31,7 +31,7 @@ const Footer = ({ routes }: NavProps) => {
             )}
             <div className="btm-nav btm-nav-sm bg-slate-50">
                 {bottomLinks.map((link: RouteProps, index: number) => (
-                    <button>
+                    <button key={index}>
                         {link.icon}
                     </button>
                 ))}

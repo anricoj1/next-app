@@ -8,7 +8,8 @@ import { useCycle } from 'framer-motion';
 import { NavProps, RouteProps } from 'types';
 
 // icons
-import { FaBars, FaAngleLeft } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
+import { MdOutlineClose } from 'react-icons/md';
 
 // components
 import Backdrop from './FooterBackdrop';
@@ -28,22 +29,16 @@ const Footer = ({ routes }: NavProps) => {
             {open && (
                 <Backdrop screenLinks={screenLinks} />
             )}
-            <footer className="footer footer-center px-4 h-14 z-100 bg-white black-primary-content absolute bottom-0 shadow-md laptop:hidden">
-                <ul className="flex w-full">
-                    {bottomLinks.map((link: RouteProps, index: number) => (
-                        <li key={index} className="mr-auto" style={{
-                            animation: `linkFade 1s ease forwards ${index / 10 + 1}s`
-                        }}>
-                            <button className="btn btn-square btn-ghost">
-                                {link.icon}
-                            </button>
-                        </li>
-                    ))}
-                    <button className="btn btn-square btn-ghost text-black" onClick={() => cycleOpen()}>
-                        {open ? <FaAngleLeft size="1.5rem" /> : <FaBars size="1.5rem" />}
+            <div className="btm-nav btm-nav-sm bg-slate-50">
+                {bottomLinks.map((link: RouteProps, index: number) => (
+                    <button>
+                        {link.icon}
                     </button>
-                </ul>
-            </footer>
+                ))}
+                <button className="text-black" onClick={() => cycleOpen()}>
+                    {open ? <MdOutlineClose size="1.5rem" /> : <FaBars size="1.5rem" />}
+                </button>
+            </div>
         </Fragment>
     )
 }

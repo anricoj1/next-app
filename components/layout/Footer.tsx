@@ -29,7 +29,7 @@ const Footer = ({ routes }: NavProps) => {
             {open && (
                 <Backdrop screenLinks={screenLinks} />
             )}
-            <div className="btm-nav btm-nav-sm bg-slate-50">
+            <div className="btm-nav btm-nav-sm bg-slate-50 z-50">
                 {bottomLinks.map((link: RouteProps, index: number) => (
                     <button key={index}>
                         {link.icon}

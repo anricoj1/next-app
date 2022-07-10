@@ -58,11 +58,11 @@ html::-webkit-scrollbar {
 }
 
 .merriweather {
-    @apply font-merriweather
+    @apply font-merriweather;
 }
 
 .satisfy {
-    @apply font-satisfy
+    @apply font-satisfy;
 }
 
 .text-md {
@@ -192,7 +192,7 @@ html::-webkit-scrollbar {
     top: 0;
     background: rgba(0, 0, 0, 0.9);
     opacity: 1;
-    height: calc(100vh - 3rem); /* bottom nav is 3.5rem */
+    height: calc(100% - 3rem); /* bottom nav is 3rem */
 }
 
 .link-container {

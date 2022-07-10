@@ -1,12 +1,15 @@
 // react
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 
 // types
-import { CountdownWidgetProps } from "types"; 
+import { CountdownWidgetProps } from "types";
+
+// icons
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const CountdownWidget = ({ destinationDate }: CountdownWidgetProps) => {
     // countdown state
-    const [timeRemaining, setTimeRemaining] = useState<string>('');
+    const [timeRemaining, setTimeRemaining] = useState<string | null>(null);
 
     // calculate date distance
     const calculateDateDiff = () => {
@@ -33,7 +36,13 @@ const CountdownWidget = ({ destinationDate }: CountdownWidgetProps) => {
 
     return (
         <h3>
-            <span id="date" className="text-sm">{timeRemaining}</span>
+            <span id="date" className="font-satisfy text-sm">
+                {timeRemaining ? timeRemaining : (
+                    <Fragment>
+                        Calculating Time <AiOutlineLoading3Quarters className="m-auto icon-spin" />
+                    </Fragment>
+                )}
+            </span>
         </h3>
     )
 }

@@ -2,20 +2,19 @@
 import { RouteProps } from 'types';
 
 // icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faBook, faLocationDot, faGifts, faUser } from '@fortawesome/free-solid-svg-icons';
+import { FaHome, FaLocationArrow, FaBook, FaUser, FaGift } from 'react-icons/fa';
 
 
 const routes: Record<string, RouteProps> = {
     home: {
         title: "Home",
         path: '/',
-        icon: <FontAwesomeIcon className="icon" icon={faHome} />
+        icon: <FaHome size="1.5rem" />
     },
     ourstory: {
         title: "Our Story",
         path: '/ourstory',
-        icon: <FontAwesomeIcon className="icon" icon={faBook} />
+        icon: <FaBook size="1.5rem" />
     },
     wedding: {
         title: "Wedding",
@@ -25,17 +24,17 @@ const routes: Record<string, RouteProps> = {
     location: {
         title: "Location",
         path: '/location',
-        icon: <FontAwesomeIcon className="icon" icon={faLocationDot} />
+        icon: <FaLocationArrow size="1.5rem" />
     },
     gifts: {
         title: "Gifts",
         path: '/gifts',
-        icon: <FontAwesomeIcon className="icon" icon={faGifts} />
+        icon: <FaGift size="1.5rem" />
     },
     profile: {
         title: "Profile",
         path: '/profile',
-        icon: <FontAwesomeIcon className="icon" icon={faUser} />
+        icon: <FaUser size="1.5rem" />
     },
 }
 

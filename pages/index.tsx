@@ -23,7 +23,7 @@ const Home: NextPage = () => {
             <FlexChild>
                 <Container>
                     <div className="center mt-100 tablet: mt-0">
-                        <h2 className="text-md merriweather">The Forevermore Farm</h2>
+                        <h2 className="text-xl font-satisfy">The Forevermore Farm</h2>
                         <h3 className="text-sm merriweather">Moore, South Carolina</h3>
                         <div className="date-info">
                             <h2 className="text-md merriweather">11/11/2023</h2>

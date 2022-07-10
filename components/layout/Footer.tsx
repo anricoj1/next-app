@@ -8,8 +8,7 @@ import { useCycle } from 'framer-motion';
 import { NavProps, RouteProps } from 'types';
 
 // icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose, faBars } from '@fortawesome/free-solid-svg-icons';
+import { FaBars, FaAngleLeft } from 'react-icons/fa';
 
 // components
 import Backdrop from './FooterBackdrop';
@@ -41,7 +40,7 @@ const Footer = ({ routes }: NavProps) => {
                         </li>
                     ))}
                     <button className="btn btn-square btn-ghost text-black" onClick={() => cycleOpen()}>
-                        <FontAwesomeIcon className="icon" icon={open ? faClose : faBars} />
+                        {open ? <FaAngleLeft size="1.5rem" /> : <FaBars size="1.5rem" />}
                     </button>
                 </ul>
             </footer>

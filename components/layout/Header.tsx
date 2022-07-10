@@ -9,10 +9,10 @@ const Header = ({ routes }: NavProps) => {
     const { pathname } = useRouter();
 
     // active link
-    const activeLink = (route: RouteProps) => route.path === pathname ? "nav-link active-nav text-black" : "nav-link text-black"; 
+    const activeLink = (route: RouteProps) => route.path === pathname ? "nav-link active-nav text-black" : "nav-link text-black";
 
     return (
-        <div className="hidden laptop:navbar bg-slate-50 shadow-lg">
+        <div className="hidden laptop:navbar bg-white shadow-md">
             <div className="flex-1">
                 <a className="btn btn-ghost normal-case text-xl text-black">Jason & Alisha</a>
             </div>

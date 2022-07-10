@@ -192,7 +192,7 @@ html::-webkit-scrollbar {
     top: 0;
     background: rgba(0, 0, 0, 0.9);
     opacity: 1;
-    height: calc(100% - 3rem); /* bottom nav is 3rem */
+    height: 95vh;
 }
 
 .link-container {

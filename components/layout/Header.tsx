@@ -1,4 +1,5 @@
 // next
+import Link from "next/link";
 import { useRouter } from 'next/router';
 
 // types
@@ -20,9 +21,9 @@ const Header = ({ routes }: NavProps) => {
                 <ul className="menu menu-horizontal p-0">
                     {Object.values(routes).slice(1, 5).map((route: RouteProps, index: number) => (
                         <li key={index} style={{ animation: `linkFade 1s ease forwards ${index / 7 + 1}s` }}>
-                            <a href={route.path} className={activeLink(route)}>
-                                {route.title}
-                            </a>
+                            <Link href={route.path} className={activeLink(route)}>
+                                <a>{route.title}</a>
+                            </Link>
                         </li>
                     ))}
                     <li className="nav-item">

@@ -27,16 +27,16 @@ const Footer = ({ routes }: NavProps) => {
     return (
         <Fragment>
             {open && (
-                <Backdrop screenLinks={screenLinks} />
+                <Backdrop screenLinks={screenLinks} cycleOpen={cycleOpen} />
             )}
-            <div className="btm-nav btm-nav-sm bg-slate-50 z-50">
+            <div className="btm-nav btm-nav-sm bg-slate-50 laptop:hidden">
                 {bottomLinks.map((link: RouteProps, index: number) => (
                     <button key={index}>
                         {link.icon}
                     </button>
                 ))}
                 <button className="text-black" onClick={() => cycleOpen()}>
-                    {open ? <MdOutlineClose size="1.5rem" /> : <FaBars size="1.5rem" />}
+                    {open ? <MdOutlineClose size="2rem" /> : <FaBars size="1.5rem" />}
                 </button>
             </div>
         </Fragment>

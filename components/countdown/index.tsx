@@ -36,7 +36,7 @@ const CountdownWidget = ({ destinationDate }: CountdownWidgetProps) => {
 
     return (
         <h3>
-            <span id="date" className="font-satisfy text-sm">
+            <span id="date" className="font-merriweather text-sm">
                 {timeRemaining ? timeRemaining : (
                     <Fragment>
                         Calculating Time <AiOutlineLoading3Quarters className="m-auto icon-spin" />

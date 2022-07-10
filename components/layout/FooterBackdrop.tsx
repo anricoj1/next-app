@@ -1,15 +1,21 @@
+// next
+import Link from 'next/link';
+
 // framer
 import { motion, AnimatePresence } from 'framer-motion';
 
 // types
 import { RouteProps } from 'types';
 
-const FooterBackdrop = ({ screenLinks }: { screenLinks: RouteProps[] }) => {
+// icons
+import { MdOutlineClose } from 'react-icons/md';
+
+const FooterBackdrop = ({ screenLinks, cycleOpen }: { screenLinks: RouteProps[], cycleOpen: Function }) => {
     return (
         <AnimatePresence>
             <motion.aside
                 initial={{ width: 0 }}
-                animate={{ width: '100%', zIndex: 100 }}
+                animate={{ width: '100%', zIndex: 100, height: 'calc(100vh - 3rem)' }}
                 className="backdrop-slate"
                 exit={{
                     width: 0,
@@ -54,18 +60,28 @@ const FooterBackdrop = ({ screenLinks }: { screenLinks: RouteProps[] }) => {
                                 }
                             }}
                         >
-                            <a className="menu-link" href={route.path}>
-                                {route.title}
-                            </a>
+                            <Link href={route.path}>
+                                <a className="menu-link">{route.title}</a>
+                            </Link>
+
                         </motion.div>
                     ))}
                     <motion.div
                         className="menu-link"
-                        whileHover={{ scale: 1.5 }}
+                        whileHover={{ scale: 1.1 }}
                         variants={{ closed: { opacity: 0 }, open: { opacity: 1 } }}
                     >
                         <button className="btn btn-square btn-primary w-72">
                             RSVP
+                        </button>
+                    </motion.div>
+                    <motion.div
+                        className="menu-link"
+                        whileHover={{ scale: 1.1 }}
+                        variants={{ closed: { opacity: 0 }, open: { opacity: 1 } }}
+                    >
+                        <button className="btn btn-square w-72 btn-ghost" onClick={() => cycleOpen()}>
+                            <MdOutlineClose size="2.5rem" />
                         </button>
                     </motion.div>
                 </motion.div>
